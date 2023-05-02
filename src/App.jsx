@@ -11,6 +11,7 @@ import storeData from "./assets/storeData"
 
 function App() {
   const [storeNumberInput, setstoreNumberInput] = useState('')
+  const [currentStore, setCurrentStore] = useState('')
 
   function updatestoreNumberInput(storeId) {
     setstoreNumberInput(storeId)
@@ -22,7 +23,8 @@ function App() {
       return
     }
     let storeNumber = storeNumberInput.padStart(4, '0')
-    console.log(storeData[storeNumber])
+    setCurrentStore(storeData[storeNumber])
+    console.log(currentStore)
   }
 
   function showErr(message) {
@@ -38,9 +40,9 @@ function App() {
             handleClick={getStoreData}
 
           />
-          <Store 
-            // handleClick={copyUrl}
-          />
+          {currentStore && <Store 
+            store={currentStore}
+          />}
       </div>
   )
 }
