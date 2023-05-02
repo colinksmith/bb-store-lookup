@@ -46,7 +46,7 @@ export default function Lookup(props) {
                     className="form--input"
                     name="storeNumber"
                     value={props.storeNumber}
-                    onChange={() => props.handleChange(inputRef.current.value)}
+                    onChange={props.handleChange}
                 />
                 <button 
                     className="form--button"
