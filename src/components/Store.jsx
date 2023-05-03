@@ -2,6 +2,9 @@ import React from "react"
 
 export default function(props) {
     const {store} = props
+    if (props.autoCopy) {
+        navigator.clipboard.writeText(store.address2.slice(-5))
+    }
     return (
         <div>
             <h3>{store && store.title}<span> ({store.number.slice(-4)})</span></h3>

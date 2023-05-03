@@ -12,6 +12,7 @@ import storeData from "./assets/storeData"
 function App() {
   const [storeNumberInput, setStoreNumberInput] = useState('')
   const [currentStore, setCurrentStore] = useState('')
+  const [autoCopy, setAutoCopy] = useState(false)
 
   useEffect(() => {
     let storeNumber = storeNumberInput.padStart(4, '0')
@@ -34,6 +35,9 @@ function App() {
     console.log('copied ' + currentStore.address2.slice(-5))
     navigator.clipboard.writeText(currentStore.address2.slice(-5))
   }
+  function toggleAutoCopy() {
+    setAutoCopy(x => !x)
+  }
 
   function showErr(message) {
     console.log(message)
@@ -46,12 +50,15 @@ function App() {
             storeNumberInput={storeNumberInput}
             handleChange={updatestoreNumberInput}
             handleClick={getStoreData}
+            autoCopy={autoCopy}
+            handleCheckBox={toggleAutoCopy}
 
           />
           {(currentStore) 
           ? <Store 
               store={currentStore}
               handleClick={copyStore}
+              autoCopy={autoCopy}
             />
           : <div>Hmm, store {storeNumberInput} doesn't seem to exist</div>}
       </div>

@@ -54,6 +54,17 @@ export default function Lookup(props) {
                 >
                     Look up store
                 </button>
+                <div>
+                    <input 
+                        type="checkbox" 
+                        id="autoCopy" 
+                        checked={props.autoCopy}
+                        onChange={props.handleCheckBox}
+                        name="autoCopy"
+                    />
+                    <label htmlFor="autoCopy">Enable auto-copy</label>
+                </div>
+
             </div>
         </main>
     )
