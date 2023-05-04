@@ -44,7 +44,7 @@ function App() {
   }
 
   return (
-      <div>
+      <div className='h-100'>
           <Header />
           <Lookup  
             storeNumberInput={storeNumberInput}
@@ -61,6 +61,9 @@ function App() {
               autoCopy={autoCopy}
             />
           : <div>Hmm, store {storeNumberInput} doesn't seem to exist</div>}
+          <footer>
+            Copyright © 2023 <a href="https://colinkenjirosmith.netlify.app/">Colin Smith</a>. All Rights Reserved
+          </footer>
       </div>
   )
 }
