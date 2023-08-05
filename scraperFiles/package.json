@@ -1,0 +1,16 @@
+{
+  "name": "scraperfiles",
+  "version": "1.0.0",
+  "description": "",
+  "main": "codeWarsScraper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scrape": "node bbStoreNumberScraper"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node": "^18.4.0",
+    "puppeteer": "^14.4.1"
+  }
+}
